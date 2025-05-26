@@ -53,46 +53,59 @@ document.getElementById('contactForm').addEventListener('submit', async function
     
     const form = event.target;
     const toast = document.getElementById('toast');
+    const successMessage = document.getElementById('formSuccessMessage');
     
-    // Clear previous error messages
+    // Clear previous messages
     document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+    successMessage.style.display = 'none';
     
     // Basic client-side validation
     let hasError = false;
-    const firstName = form.firstName.value.trim();
-    const lastName = form.lastName.value.trim();
-    const email = form.email.value.trim();
-    const message = form.message.value.trim();
+    const requiredFields = [
+        { field: form.firstName, error: 'First name is required' },
+        { field: form.lastName, error: 'Last name is required' },
+        { field: form.email, error: 'Email is required', 
+          validate: (value) => !/\S+@\S+\.\S+/.test(value) ? 'Invalid email format' : null },
+        { field: form.message, error: 'Message is required' }
+    ];
     
-    if (!firstName) {
-        form.firstName.nextElementSibling.textContent = 'First name is required';
-        hasError = true;
-    }
-    if (!lastName) {
-        form.lastName.nextElementSibling.textContent = 'Last name is required';
-        hasError = true;
-    }
-    if (!email) {
-        form.email.nextElementSibling.textContent = 'Email is required';
-        hasError = true;
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-        form.email.nextElementSibling.textContent = 'Invalid email format';
-        hasError = true;
-    }
-    if (!message) {
-        form.message.nextElementSibling.textContent = 'Message is required';
-        hasError = true;
-    }
+    requiredFields.forEach(({field, error, validate}) => {
+        const value = field.value.trim();
+        if (!value) {
+            field.nextElementSibling.textContent = error;
+            hasError = true;
+        } else if (validate) {
+            const validationError = validate(value);
+            if (validationError) {
+                field.nextElementSibling.textContent = validationError;
+                hasError = true;
+            }
+        }
+    });
     
     if (hasError) return;
     
-    // Show toast notification
+    // Show messages
     const showToast = (message, type) => {
         toast.textContent = message;
         toast.className = `toast ${type} show`;
         setTimeout(() => {
             toast.className = 'toast';
         }, 3000);
+    };
+    
+    const showSuccessMessage = (message) => {
+        successMessage.textContent = message;
+        successMessage.style.display = 'block';
+        setTimeout(() => {
+            successMessage.style.opacity = '1';
+            setTimeout(() => {
+                successMessage.style.opacity = '0';
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 300);
+            }, 3000);
+        }, 0);
     };
     
     try {
@@ -106,6 +119,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
         
         if (response.ok) {
             showToast('Thank you! Your message has been sent.', 'success');
+            showSuccessMessage('Thank you for your message! We will get back to you soon.');
             form.reset();
         } else {
             showToast('Failed to send message. Please try again.', 'error');

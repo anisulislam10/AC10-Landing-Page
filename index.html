@@ -16,7 +16,7 @@
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
-                    <a href="#home">
+                    <a href="https://atgpharma.com">
                         <img src="/assets/images/logo/atg-logo.png" alt="ATG Pharma" class="logo-img">
                     </a>
                 </div>
@@ -54,14 +54,16 @@
         <div class="hero-form compact-form">
     <div class="form-header">
         <h3>Get in Touch</h3>
+        <div id="formSuccessMessage" class="success-message" style="display: none;"></div>
+
         <div class="form-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                 <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
         </div>
-    </div>
-   <form id="contactForm" method="POST">
+            </div>
+        <form id="contactForm" method="POST">
         <!-- Formspree Configuration -->
         <input type="hidden" name="_subject" value="New Contact Form Submission">
         <input type="hidden" name="_language" value="en">
@@ -143,66 +145,84 @@
         <h2 class="section-title">Gummy Depositor Specifications</h2>
         <div class="specs-horizontal">
             <div class="spec-row">
-                <div class="spec-name">Maximum Temperature<div class="toggle-icon">▼</div></div>
-                <div class="spec-value">130 degrees</div>
+                <div class="spec-name">Maximum Temperature</div>
+                <div class="spec-value show">130°C</div>
             </div>
             <div class="spec-row">
-                <div class="spec-name">Servo Motor<div class="toggle-icon">▼</div></div>
-                <div class="spec-value">400W</div>
+                <div class="spec-name">Servo Motor</div>
+                <div class="spec-value show">400W</div>
             </div>
             <div class="spec-row">
-                <div class="spec-name">Power Supply<div class="toggle-icon">▼</div></div>
-                <div class="spec-value">110V-24VAC 50-60Hz</div>
+                <div class="spec-name">Power Supply</div>
+                <div class="spec-value show">110V-240V AC 50-60Hz</div>
             </div>
             <div class="spec-row">
-                <div class="spec-name">Number Of Nozzles<div class="toggle-icon">▼</div></div>
-                <div class="spec-value">10</div>
+                <div class="spec-name">Number Of Nozzles</div>
+                <div class="spec-value show">10</div>
             </div>
             <div class="spec-row">
-                <div class="spec-name">Hopper Size<div class="toggle-icon">▼</div></div>
-                <div class="spec-value">12L</div>
+                <div class="spec-name">Hopper Size</div>
+                <div class="spec-value show">12L</div>
             </div>
             <div class="spec-row">
-                <div class="spec-name">Shot Size<div class="toggle-icon">▼</div></div>
-                <div class="spec-value">1-5 grams/shot</div>
+                <div class="spec-name">Shot Size</div>
+                <div class="spec-value show">1-5 grams/shot</div>
             </div>
             <div class="spec-row">
-                <div class="spec-name">HMI<div class="toggle-icon">▼</div></div>
-                <div class="spec-value">Touch Screen</div>
+                <div class="spec-name">HMI</div>
+                <div class="spec-value show">Touch Screen</div>
             </div>
             <div class="spec-row">
-                <div class="spec-name">Floor Size<div class="toggle-icon">▼</div></div>
-                <div class="spec-value">25" X 14" X 29"</div>
+                <div class="spec-name">Floor Size</div>
+                <div class="spec-value show">25" × 14" × 29"</div>
             </div>
         </div>
     </div>
 </section>
 
-    <section id="components" class="components-section">
-        <div class="container">
-            <h2 class="section-title">AC10 Mini Candy Depositor Components</h2>
-            <div class="components-grid">
-                <div class="component-card">
-                    <div class="component-image">
-                        <img src="assets/images/c1.png" alt="Intuitive Touch Screen">
-                    </div>
-                    <div class="component-content">
+  <section id="components" class="components-section">
+    <div class="container">
+        <h2 class="section-title">AC10 Mini Candy Depositor Components</h2>
+        <div class="components-grid">
+            <div class="component-card">
+                <div class="component-image">
+                    <img src="assets/images/c1.png" alt="Intuitive Touch Screen">
+                </div>
+                <div class="component-content">
+                    <div class="content-wrapper">
                         <h3>Intuitive Touch Screen</h3>
-                        <p>The AC-10 Gummy Depositor offers seamless control through its intuitive touchscreen, allowing you to easily adjust temperature, deposit volume, and mold spacing to meet your exact production needs.</p>
+              <p>The AC-10 Gummy Depositor puts full command at your fingertips with its user-friendly touchscreen interface. Effortlessly fine-tune settings for flawless production, ensuring consistency and efficiency in every batch.</p>
+
+<ul style="list-style-type: none; padding-left: 0; margin-top: 0;">
+    <li>✔ Precision Adjustments </li>
+    <li>✔ Streamlined Workflow </li>
+    <li>✔ Error-Free Operation </li>
+</ul>
+
                     </div>
                 </div>
-                <div class="component-card reverse">
-                    <div class="component-image">
-                        <img src="assets/images/c2.png" alt="Multi-Nozzle Depositor">
-                    </div>
-                    <div class="component-content">
+            </div>
+            <div class="component-card reverse">
+                <div class="component-image">
+                    <img src="assets/images/c2.png" alt="Multi-Nozzle Depositor">
+                </div>
+                <div class="component-content">
+                    <div class="content-wrapper">
                         <h3>Multi-Nozzle Depositor</h3>
-                        <p>The multi-nozzle depositor enables you to fill up to 10 molds in a single shot. With the right parameters, you can deposit directly into each mold, preventing mess and ensuring precise gummy production every time.</p>
+                       <p>Our advanced multi-nozzle depositor lets you fill up to 10 molds in a single shot, slashing production time and maximizing efficiency. By optimizing key parameters, you can deposit directly into each mold with pinpoint accuracy—eliminating mess, reducing waste, and ensuring perfectly shaped gummies every time.</p>
+
+<ul style="list-style-type: none; padding-left: 0;">
+    <li>✔ Faster output </li>
+    <li>✔ Consistent results</li>
+    <li>✔ Less cleanup </li>
+</ul>
+
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="video-section">
         <div class="container">
