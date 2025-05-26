@@ -470,7 +470,78 @@ button, input, textarea, select {
     background-size: 0.9rem;
     padding-right: 2rem !important;
 }
+.error-message {
+    color: #ff4444;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    display: none;
+}
 
+/* Success/Error Message Styles */
+.success-message, .error-message {
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.success-message {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Loading state for submit button */
+.submit-button[disabled] {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.submit-button[disabled] svg {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Invalid field styling */
+input:invalid, textarea:invalid {
+    border-color: #ff4444;
+}
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.toast.success {
+    background-color: #445ffa;
+}
+
+.toast.error {
+    background-color: #dc3545;
+}
+
+.toast.show {
+    opacity: 1;
+}
 /* Submit Button Styles */
 .compact-form .submit-button {
     display: inline-flex;
@@ -552,7 +623,7 @@ button, input, textarea, select {
   padding: 2rem;
   text-align: center;
   box-shadow: var(--shadow);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 2px solid rgba(0, 0, 0, 0.05);
 }
 
 .feature-card:hover {
@@ -569,6 +640,7 @@ button, input, textarea, select {
 .feature-card h3 {
   font-size: 1.25rem;
   margin-bottom: 1rem;
+  text-align: left;
 }
 
 .feature-card p {

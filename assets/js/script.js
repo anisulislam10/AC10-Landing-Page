@@ -48,34 +48,72 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // Form validation and submission
-  const contactForm = document.getElementById('contactForm');
-  const ac10ContactForm = document.getElementById('ac10ContactForm');
-  
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Form validation logic here
-      console.log('Form submitted!');
-      // You would typically add AJAX submission here
-      this.reset();
-      
-      // Show success message
-      alert('Thank you for your inquiry! We will get back to you soon.');
-    });
-  }
-  
-  if (ac10ContactForm) {
-    ac10ContactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Form validation logic here
-      console.log('AC10 Form submitted!');
-      // You would typically add AJAX submission here
-      this.reset();
-      
-      // Show success message
-      alert('Thank you for your inquiry about the AC10 Mini Candy Depositor! We will get back to you soon.');
-    });
-  }
+document.getElementById('contactForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const toast = document.getElementById('toast');
+    
+    // Clear previous error messages
+    document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+    
+    // Basic client-side validation
+    let hasError = false;
+    const firstName = form.firstName.value.trim();
+    const lastName = form.lastName.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+    
+    if (!firstName) {
+        form.firstName.nextElementSibling.textContent = 'First name is required';
+        hasError = true;
+    }
+    if (!lastName) {
+        form.lastName.nextElementSibling.textContent = 'Last name is required';
+        hasError = true;
+    }
+    if (!email) {
+        form.email.nextElementSibling.textContent = 'Email is required';
+        hasError = true;
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+        form.email.nextElementSibling.textContent = 'Invalid email format';
+        hasError = true;
+    }
+    if (!message) {
+        form.message.nextElementSibling.textContent = 'Message is required';
+        hasError = true;
+    }
+    
+    if (hasError) return;
+    
+    // Show toast notification
+    const showToast = (message, type) => {
+        toast.textContent = message;
+        toast.className = `toast ${type} show`;
+        setTimeout(() => {
+            toast.className = 'toast';
+        }, 3000);
+    };
+    
+    try {
+        const response = await fetch('https://formspree.io/f/xpwdgobl', {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            showToast('Thank you! Your message has been sent.', 'success');
+            form.reset();
+        } else {
+            showToast('Failed to send message. Please try again.', 'error');
+        }
+    } catch (error) {
+        showToast('An error occurred. Please try again later.', 'error');
+    }
+});
   
   // Animate elements when they come into view
   const animateOnScroll = function() {
