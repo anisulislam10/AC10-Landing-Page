@@ -362,50 +362,80 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // gallery
-document.addEventListener('DOMContentLoaded', () => {
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.querySelector('.lightbox-image');
-    const lightboxClose = document.querySelector('.lightbox-close');
-
-    galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const fullImage = item.querySelector('img').getAttribute('data-full');
-            lightboxImage.src = fullImage;
-            lightbox.classList.add('active');
-        });
+// gallery
+document.addEventListener('DOMContentLoaded', function() {
+    // Gallery images data
+    const galleryImages = [
+        { src: 'assets/images/gallery/1.png', title: 'AC10 MiniCandy Depositor' },
+        { src: 'assets/images/gallery/2.png', title: 'Intuitive Touch Screen component' },
+        { src: 'assets/images/gallery/3.png', title: 'Multi-Nozzle Depositor component' }
+    ];
+    
+    // DOM elements
+    const galleryButton = document.getElementById('galleryButton');
+    const galleryPopup = document.getElementById('galleryPopup');
+    const closeBtn = document.querySelector('.close-btn');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const currentImage = document.getElementById('currentImage');
+    const galleryHeading = document.getElementById('galleryHeading');
+    
+    let currentImageIndex = 0;
+    
+    // Open gallery
+    galleryButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        currentImageIndex = 0;
+        updateGallery();
+        galleryPopup.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
     });
-
-    lightboxClose.addEventListener('click', () => {
-        lightbox.classList.remove('active');
+    
+    // Close gallery
+    closeBtn.addEventListener('click', function() {
+        galleryPopup.style.display = 'none';
+        document.body.style.overflow = 'auto';
     });
-
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            lightbox.classList.remove('active');
+    
+    // Previous image
+    prevBtn.addEventListener('click', function() {
+        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+        updateGallery();
+    });
+    
+    // Next image
+    nextBtn.addEventListener('click', function() {
+        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+        updateGallery();
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (galleryPopup.style.display === 'flex') {
+            if (e.key === 'ArrowLeft') {
+                prevBtn.click();
+            } else if (e.key === 'ArrowRight') {
+                nextBtn.click();
+            } else if (e.key === 'Escape') {
+                closeBtn.click();
+            }
         }
     });
-
-    // Animation on scroll for gallery items
-    const animateGallery = () => {
-        const items = document.querySelectorAll('.gallery-item');
-        items.forEach(item => {
-            const itemPosition = item.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.2;
-
-            if (itemPosition < screenPosition) {
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(0)';
-            }
-        });
-    };
-
-    document.querySelectorAll('.gallery-item').forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    
+    // Update gallery display
+    function updateGallery() {
+        currentImage.src = galleryImages[currentImageIndex].src;
+        currentImage.alt = galleryImages[currentImageIndex].title;
+        galleryHeading.textContent = galleryImages[currentImageIndex].title;
+    }
+    
+    // Close when clicking outside content
+    galleryPopup.addEventListener('click', function(e) {
+        if (e.target === galleryPopup) {
+            closeBtn.click();
+        }
     });
-
-    window.addEventListener('load', animateGallery);
-    window.addEventListener('scroll', animateGallery);
+    
+    // Initialize with first image
+    updateGallery();
 });
