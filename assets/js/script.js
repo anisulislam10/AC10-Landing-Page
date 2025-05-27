@@ -46,89 +46,166 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+  //hero section
   
-  // Form validation and submission
-document.getElementById('contactForm').addEventListener('submit', async function(event) {
-    event.preventDefault();
-    
-    const form = event.target;
-    const toast = document.getElementById('toast');
-    const successMessage = document.getElementById('formSuccessMessage');
-    
-    // Clear previous messages
-    document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
-    successMessage.style.display = 'none';
-    
-    // Basic client-side validation
-    let hasError = false;
-    const requiredFields = [
-        { field: form.firstName, error: 'First name is required' },
-        { field: form.lastName, error: 'Last name is required' },
-        { field: form.email, error: 'Email is required', 
-          validate: (value) => !/\S+@\S+\.\S+/.test(value) ? 'Invalid email format' : null },
-        { field: form.message, error: 'Message is required' }
-    ];
-    
-    requiredFields.forEach(({field, error, validate}) => {
-        const value = field.value.trim();
-        if (!value) {
-            field.nextElementSibling.textContent = error;
-            hasError = true;
-        } else if (validate) {
-            const validationError = validate(value);
-            if (validationError) {
-                field.nextElementSibling.textContent = validationError;
-                hasError = true;
+    // Countdown Timer
+   // Countdown Timer
+const countdownElement = document.getElementById('countdown');
+    if (countdownElement) {
+        // Set the end date to 7 days from now, at 23:59:59 local time
+        const endDate = new Date();
+        endDate.setDate(endDate.getDate() + 30);
+        endDate.setHours(23, 59, 59, 999);
+
+        const updateCountdown = () => {
+            const now = new Date();
+            const timeLeft = endDate - now;
+
+            if (timeLeft <= 0) {
+                countdownElement.innerHTML = '<p class="offer-expired">Offer Expired!</p>';
+                clearInterval(timerInterval);
+                return;
             }
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            const daysElement = document.getElementById('days');
+            const hoursElement = document.getElementById('hours');
+            const minutesElement = document.getElementById('minutes');
+            const secondsElement = document.getElementById('seconds');
+
+            if (daysElement && hoursElement && minutesElement && secondsElement) {
+                daysElement.textContent = days.toString().padStart(2, '0');
+                hoursElement.textContent = hours.toString().padStart(2, '0');
+                minutesElement.textContent = minutes.toString().padStart(2, '0');
+                secondsElement.textContent = seconds.toString().padStart(2, '0');
+            } else {
+                console.error('Countdown timer elements (days, hours, minutes, seconds) not found in DOM');
+                clearInterval(timerInterval);
+            }
+        };
+
+        updateCountdown();
+        const timerInterval = setInterval(updateCountdown, 1000);
+    } else {
+        console.warn('Countdown element not found in DOM. Skipping countdown initialization.');
+    }
+  
+
+  // Form validation and submission
+   // Form Validation and Submission
+    const form = document.getElementById('contactForm');
+    const toast = document.getElementById('toast');
+
+    if (!form) {
+        console.error('Form element with ID "contactForm" not found in DOM.');
+        return;
+    }
+
+    if (!toast) {
+        console.error('Toast element with ID "toast" not found in DOM.');
+        return;
+    }
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const submitButton = form.querySelector('.submit-button');
+        if (submitButton) {
+            submitButton.disabled = true;
         }
-    });
-    
-    if (hasError) return;
-    
-    // Show messages
-    const showToast = (message, type) => {
-        toast.textContent = message;
-        toast.className = `toast ${type} show`;
-        setTimeout(() => {
-            toast.className = 'toast';
-        }, 3000);
-    };
-    
-    const showSuccessMessage = (message) => {
-        successMessage.textContent = message;
-        successMessage.style.display = 'block';
-        setTimeout(() => {
-            successMessage.style.opacity = '1';
-            setTimeout(() => {
-                successMessage.style.opacity = '0';
-                setTimeout(() => {
-                    successMessage.style.display = 'none';
-                }, 300);
-            }, 3000);
-        }, 0);
-    };
-    
-    try {
-        const response = await fetch('https://formspree.io/f/xpwdgobl', {
-            method: 'POST',
-            body: new FormData(form),
-            headers: {
-                'Accept': 'application/json'
+
+        // Clear previous error messages
+        document.querySelectorAll('.error-message').forEach(el => {
+            el.textContent = '';
+            el.className = 'error-message';
+        });
+
+        // Client-side validation
+        let hasError = false;
+        const requiredFields = [
+            {
+                field: form.name,
+                error: 'Name is required'
+            },
+            {
+                field: form.email,
+                error: 'Email is required',
+                validate: (value) => !/\S+@\S+\.\S+/.test(value) ? 'Invalid email format' : null
+            },
+            {
+                field: form.phone,
+                error: 'Phone number is required',
+                validate: (value) => !/^\+?\d{10,15}$/.test(value) ? 'Invalid phone number' : null
+            }
+        ];
+
+        requiredFields.forEach(({ field, error, validate }) => {
+            if (!field) {
+                console.error(`Form field for ${error.toLowerCase()} not found`);
+                hasError = true;
+                return;
+            }
+            const value = field.value.trim();
+            const errorElement = field.nextElementSibling;
+            if (!value) {
+                if (errorElement) {
+                    errorElement.textContent = error;
+                    errorElement.className = 'error-message show';
+                }
+                hasError = true;
+            } else if (validate) {
+                const validationError = validate(value);
+                if (validationError && errorElement) {
+                    errorElement.textContent = validationError;
+                    errorElement.className = 'error-message show';
+                    hasError = true;
+                }
             }
         });
-        
-        if (response.ok) {
-            showToast('Thank you! Your message has been sent.', 'success');
-            showSuccessMessage('Thank you for your message! We will get back to you soon.');
-            form.reset();
-        } else {
-            showToast('Failed to send message. Please try again.', 'error');
+
+        if (hasError) {
+            if (submitButton) submitButton.disabled = false;
+            return;
         }
-    } catch (error) {
-        showToast('An error occurred. Please try again later.', 'error');
-    }
-});
-  
+
+        // Form submission
+        try {
+            const response = await fetch('https://formspree.io/f/xpwdgobl', {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                toast.textContent = 'Thank you! Your request has been submitted.';
+                toast.className = 'toast success show';
+                form.reset();
+                setTimeout(() => {
+                    toast.className = 'toast success';
+                }, 3000);
+            } else {
+                const errorData = await response.json();
+                toast.textContent = errorData.error || 'Failed to send message. Please try again.';
+                toast.className = 'toast error show';
+                setTimeout(() => {
+                    toast.className = 'toast error';
+                }, 3000);
+            }
+        } catch (error) {
+            toast.textContent = 'An error occurred. Please try again later.';
+            toast.className = 'toast error show';
+            setTimeout(() => {
+                toast.className = 'toast error';
+            }, 3000);
+        } finally {
+            if (submitButton) submitButton.disabled = false;
+        }
+    });
   // Animate elements when they come into view
   const animateOnScroll = function() {
     const elements = document.querySelectorAll('.feature-card, .spec-item, .component-card, .video-wrapper');
@@ -173,4 +250,162 @@ document.addEventListener('DOMContentLoaded', function() {
       row.classList.toggle('active');
     });
   });
+});
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Pause animations on hover
+  const rows = document.querySelectorAll('.partners-row');
+  
+  rows.forEach(row => {
+    row.addEventListener('mouseenter', () => {
+      const track = row.querySelector('.partners-track');
+      track.style.animationPlayState = 'paused';
+    });
+    
+    row.addEventListener('mouseleave', () => {
+      const track = row.querySelector('.partners-track');
+      track.style.animationPlayState = 'running';
+    });
+  });
+  
+  // Adjust animation duration based on number of logos
+  const tracks = document.querySelectorAll('.partners-track');
+  tracks.forEach(track => {
+    const logoCount = track.querySelectorAll('.partner-logo').length;
+    const duration = Math.max(20, logoCount * 2); // Minimum 20s
+    track.style.animationDuration = `${duration}s`;
+  });
+});
+
+
+// testimonial section
+document.addEventListener('DOMContentLoaded', function() {
+  const testimonials = document.querySelectorAll('.testimonial');
+  const dotsContainer = document.querySelector('.slider-dots');
+  const prevBtn = document.querySelector('.slider-prev');
+  const nextBtn = document.querySelector('.slider-next');
+  let currentIndex = 0;
+  let intervalId;
+  
+  // Create dots
+  testimonials.forEach((_, index) => {
+    const dot = document.createElement('div');
+    dot.classList.add('slider-dot');
+    if (index === 0) dot.classList.add('active');
+    dot.dataset.index = index;
+    dotsContainer.appendChild(dot);
+  });
+  
+  const dots = document.querySelectorAll('.slider-dot');
+  
+  function showTestimonial(index) {
+    testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    testimonials[index].classList.add('active');
+    dots[index].classList.add('active');
+    currentIndex = index;
+  }
+  
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    showTestimonial(currentIndex);
+  }
+  
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+    showTestimonial(currentIndex);
+  }
+  
+  function startAutoSlide() {
+    intervalId = setInterval(nextSlide, 3000);
+  }
+  
+  function stopAutoSlide() {
+    clearInterval(intervalId);
+  }
+  
+  // Event listeners
+  nextBtn.addEventListener('click', () => {
+    stopAutoSlide();
+    nextSlide();
+    startAutoSlide();
+  });
+  
+  prevBtn.addEventListener('click', () => {
+    stopAutoSlide();
+    prevSlide();
+    startAutoSlide();
+  });
+  
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      stopAutoSlide();
+      showTestimonial(parseInt(dot.dataset.index));
+      startAutoSlide();
+    });
+  });
+  
+  // Pause on hover
+  const slider = document.querySelector('.testimonials-slider');
+  slider.addEventListener('mouseenter', stopAutoSlide);
+  slider.addEventListener('mouseleave', startAutoSlide);
+  
+  // Initialize
+  startAutoSlide();
+});
+
+
+
+// gallery
+document.addEventListener('DOMContentLoaded', () => {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.querySelector('.lightbox-image');
+    const lightboxClose = document.querySelector('.lightbox-close');
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const fullImage = item.querySelector('img').getAttribute('data-full');
+            lightboxImage.src = fullImage;
+            lightbox.classList.add('active');
+        });
+    });
+
+    lightboxClose.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+        }
+    });
+
+    // Animation on scroll for gallery items
+    const animateGallery = () => {
+        const items = document.querySelectorAll('.gallery-item');
+        items.forEach(item => {
+            const itemPosition = item.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+
+            if (itemPosition < screenPosition) {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+
+    window.addEventListener('load', animateGallery);
+    window.addEventListener('scroll', animateGallery);
 });
