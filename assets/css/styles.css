@@ -220,7 +220,7 @@ button, input, textarea, select {
     position: relative;
     padding: 4rem 0;
     overflow: hidden;
-    background: linear-gradient(135deg, #5073DB 0%, #3B5998 100%);
+    background: linear-gradient(135deg, #08153d 0%, #3B5998 100%);
     color: white;
     max-height: 1200px;
     padding: 150px;
@@ -237,7 +237,7 @@ button, input, textarea, select {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    opacity: 0.p;
+    opacity: 0.8;
     z-index: 1;
 }
 
@@ -287,15 +287,18 @@ button, input, textarea, select {
     font-family: var(--font-heading);
     font-weight: 500;
     margin-bottom: 1rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 3px 6px black;
 }
 
 .hero-text {
     font-size: 1.3rem;
     font-family: var(--font-main);
     margin-bottom: 1.5rem;
-    max-width: 600px;
-    color: rgba(255, 255, 255, 0.85);
+    max-width: 700px;
+    color: white;
+    text-shadow: 3px 3px 6px black;
+
 }
 
 .offer-highlight {
@@ -336,9 +339,9 @@ button, input, textarea, select {
 .button-container {
     display: flex;
     flex-direction: row; /* Stack buttons vertically */
-    gap: 1px; /* Vertical space between buttons */
+    gap: 8px; /* Vertical space between buttons */
     width: 50%; /* Full width on mobile */
-    margin: 1.5rem 0;
+    margin: 2.5rem 0;
   }
 
   /* CTA Buttons - Mobile Specific Styles */
@@ -358,7 +361,6 @@ button, input, textarea, select {
   }
 
 .cta-button:hover {
-    background-color: var(--primary-dark);
     transform: translateY(-2px);
     color: rgb(255, 255, 255);
 }
@@ -465,9 +467,7 @@ button, input, textarea, select {
 }
 
 .submit-button:hover {
-    background-color: var(--primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .submit-button svg {
