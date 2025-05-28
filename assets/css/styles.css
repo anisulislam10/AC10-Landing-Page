@@ -1279,16 +1279,17 @@ button, input, textarea, select {
   .nav-links {
     position: fixed;
     top: 70px;
-    left: -100%;
+    left: 100%;
     width: 100%;
     height: calc(100vh - 70px);
     background-color: white;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: le;
+    justify-content: start;
     gap: 2rem;
     transition: var(--transition);
     z-index: 999;
+    padding-top: 12px;
   }
   
   .nav-links.active {
