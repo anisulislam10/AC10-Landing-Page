@@ -1252,8 +1252,8 @@ button, input, textarea, select {
   /* CTA Buttons - Mobile Specific Styles */
   .cta-button {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: start;
     background-color: var(--primary);
     color: white;
     padding: 12px 24px;
@@ -1323,7 +1323,7 @@ button, input, textarea, select {
     flex-direction: row; /* Stack buttons vertically */
     gap: 1px; /* Vertical space between buttons */
     width: 50%; /* Full width on mobile */
-    margin: 1.5rem 0;
+    /* margin: 1.5rem 0; */
   }
 
   /* CTA Buttons - Mobile Specific Styles */
@@ -1353,6 +1353,7 @@ button, input, textarea, select {
   }
   .specs-horizontal {
     grid-template-columns: 1fr;
+
   }
   .hero-container{
     margin-top: -40px;
@@ -1372,7 +1373,11 @@ button, input, textarea, select {
     grid-template-columns: 1fr;
   }
   .button-container {
-    display: none;
+    display: flex;
+    flex-direction: column;
+
+
+    
     
   }
   .hero-content{
@@ -1380,9 +1385,11 @@ button, input, textarea, select {
   }
 
   /* CTA Buttons - Mobile Specific Styles */
-  .cta-button {
-    display: none;
-  }
+  /* .cta-button{
+    display: flex;
+    flex-direction: column;
+    
+  } */
 
 }}
 
@@ -1767,7 +1774,7 @@ button, input, textarea, select {
 .popup-content {
     position: relative;
     background-color: #fff;
-    padding: 20px;
+    padding: 20px; 
     border-radius: 8px;
     max-width: 90%;
     max-height: 90%;
