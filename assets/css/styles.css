@@ -220,7 +220,7 @@ button, input, textarea, select {
     position: relative;
     padding: 4rem 0;
     overflow: hidden;
-    background: linear-gradient(135deg, #08153d 0%, #3B5998 100%);
+    background: linear-gradient(135deg, #061131 0%, #05122e 100%);
     color: white;
     max-height: 1200px;
     padding: 150px;
@@ -237,7 +237,7 @@ button, input, textarea, select {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    opacity: 0.8;
+    opacity: 0.5;
     z-index: 1;
 }
 
@@ -284,11 +284,10 @@ button, input, textarea, select {
 
 .hero-subtitle {
     font-size: 1.5rem;
-    font-family: var(--font-heading);
+    font-family: var(--font-main);
     font-weight: 500;
     margin-bottom: 1rem;
     color: rgb(255, 255, 255);
-    text-shadow: 3px 3px 6px black;
 }
 
 .hero-text {
@@ -297,7 +296,8 @@ button, input, textarea, select {
     margin-bottom: 1.5rem;
     max-width: 700px;
     color: white;
-    text-shadow: 3px 3px 6px black;
+        font-weight: 500;
+
 
 }
 
@@ -1513,11 +1513,10 @@ button, input, textarea, select {
 }
 
 .testimonial-content {
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.2;
   color: #333;
   margin-bottom: 2rem;
-  font-style: italic;
   position: relative;
   padding: 0 2rem;
 }
@@ -1743,7 +1742,7 @@ button, input, textarea, select {
     display: inline-block;
     padding: 12px 24px;
     margin: 20px;
-    background-color: #2852c5;
+    background-color: #0271E3;
     color: white;
     text-decoration: none;
     border-radius: 4px;
@@ -1846,7 +1845,7 @@ button, input, textarea, select {
 .cta-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
+    /* background-color: #007bff; */
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -1854,5 +1853,5 @@ button, input, textarea, select {
 }
 
 .cta-button:hover {
-    background-color: #0056b3;
+    background-color: #0271E3;
 }
