@@ -362,7 +362,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // gallery
-// gallery
 document.addEventListener('DOMContentLoaded', function() {
     // Gallery images data
     const galleryImages = [
@@ -380,6 +379,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentImage = document.getElementById('currentImage');
     const galleryHeading = document.getElementById('galleryHeading');
     
+    // Debugging: Check if elements exist
+    console.log('Gallery Heading Element:', galleryHeading);
+    
     let currentImageIndex = 0;
     
     // Open gallery
@@ -389,6 +391,9 @@ document.addEventListener('DOMContentLoaded', function() {
         updateGallery();
         galleryPopup.style.display = 'flex';
         document.body.style.overflow = 'hidden';
+        
+        // Debugging
+        console.log('Popup opened, current title:', galleryImages[currentImageIndex].title);
     });
     
     // Close gallery
@@ -397,36 +402,44 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = 'auto';
     });
     
-    // Previous image
-    prevBtn.addEventListener('click', function() {
-        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    // Navigation functions
+    function navigate(direction) {
+        currentImageIndex = (currentImageIndex + direction + galleryImages.length) % galleryImages.length;
         updateGallery();
-    });
+        
+        // Debugging
+        console.log('Navigated to index:', currentImageIndex, 'Title:', galleryImages[currentImageIndex].title);
+    }
+    
+    // Previous image
+    prevBtn.addEventListener('click', () => navigate(-1));
     
     // Next image
-    nextBtn.addEventListener('click', function() {
-        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-        updateGallery();
-    });
+    nextBtn.addEventListener('click', () => navigate(1));
     
     // Keyboard navigation
     document.addEventListener('keydown', function(e) {
         if (galleryPopup.style.display === 'flex') {
-            if (e.key === 'ArrowLeft') {
-                prevBtn.click();
-            } else if (e.key === 'ArrowRight') {
-                nextBtn.click();
-            } else if (e.key === 'Escape') {
-                closeBtn.click();
-            }
+            if (e.key === 'ArrowLeft') navigate(-1);
+            else if (e.key === 'ArrowRight') navigate(1);
+            else if (e.key === 'Escape') closeBtn.click();
         }
     });
     
     // Update gallery display
     function updateGallery() {
-        currentImage.src = galleryImages[currentImageIndex].src;
-        currentImage.alt = galleryImages[currentImageIndex].title;
-        galleryHeading.textContent = galleryImages[currentImageIndex].title;
+        const current = galleryImages[currentImageIndex];
+        currentImage.src = current.src;
+        currentImage.alt = current.title;
+        
+        // Debugging before setting title
+        console.log('Updating title to:', current.title);
+        
+        galleryHeading.textContent = current.title;
+        
+        // Debugging after setting title
+        console.log('Title element content:', galleryHeading.textContent);
+        console.log('Title element visibility:', window.getComputedStyle(galleryHeading).display);
     }
     
     // Close when clicking outside content
