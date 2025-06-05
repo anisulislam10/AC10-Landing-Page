@@ -1,3 +1,20 @@
+
+/* Define font-face first */
+/* @font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/Graphik-Family/Graphik-Medium-Trial.otf') format('opentype');
+  font-style: normal;
+  font-display: swap; 
+} */
+
+/* Define other font weights if available (recommended) */
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/graphik/graphik-10.ttf') format('truetype');
+  font-weight: 400;  /* Added - crucial for font-weight to work */
+  font-style: normal; /* Fixed typo (was "nomal") */
+  font-display: swap; /* Good practice for performance */
+}
 /* Base Styles & Variables */
 :root {
   --primary: #2563eb;
@@ -11,7 +28,7 @@
   --error: #ef4444;
   
   --font-sans: 'Graphik',sans-serif;
-  --font-heading: 'Graphik',sans-serif; ;
+  --font-heading: 'Graphik',sans-serif ;
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -20,13 +37,6 @@
   --transition: all 0.3s ease;
   --transition-fast: all 0.15s ease;
 }
-@font-face {
-  font-family: 'Graphik';
-  src:url('/assets/fonts/Graphik-Family/Graphik-Medium-Trial.otf') format('otf');
-  font-weight: 500; /* ✅ Match actual font weight */
-    font-style: normal;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -308,7 +318,7 @@ text-align: left;
     color: white;
     font-weight: 500;
 text-align: left;
-line-height: 1.1;
+line-height: 1.2;
 
 }
 
