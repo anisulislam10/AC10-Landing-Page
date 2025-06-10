@@ -11,9 +11,7 @@
 @font-face {
   font-family: 'Graphik';
   src: url('/assets/fonts/graphik/graphik-10.ttf') format('truetype');
-  font-weight: 400;  /* Added - crucial for font-weight to work */
-  font-style: normal; /* Fixed typo (was "nomal") */
-  font-display: swap; /* Good practice for performance */
+
 }
 /* Base Styles & Variables */
 :root {
@@ -27,7 +25,7 @@
   --success: #10b981;
   --error: #ef4444;
   
-  --font-sans: 'Graphik',sans-serif;
+  --font-sans: 'Graphik',sans-serif ;
   --font-heading: 'Graphik',sans-serif ;
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -48,17 +46,17 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
-  line-height: 1.2;
+  font-family: var(--font-heading);
+  line-height: 1.5;
   color: var(--dark);
   background-color: var(--light);
   overflow-x: hidden;
 }
-
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.5;
   margin-bottom: 1rem;
+  
 }
 
 p {
@@ -151,7 +149,7 @@ button, input, textarea, select {
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
-  
+  font-size: 13px;
 }
 
 .header.scrolled {
@@ -247,7 +245,7 @@ button, input, textarea, select {
     background-size: contain;
     background-position:  center center;
     background-repeat: no-repeat;
-    opacity: 0.6;
+    opacity: 0.7;
     z-index: 1;
 }
 
@@ -257,7 +255,7 @@ button, input, textarea, select {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(13, 21, 37, 0.322);
+    background: rgba(31, 76, 165, 0.322);
     z-index: 2;
 }
 
@@ -272,7 +270,7 @@ button, input, textarea, select {
 .hero-container {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 10rem;
     position: relative;
     z-index: 3;
     margin-top: 25px;
@@ -297,15 +295,18 @@ button, input, textarea, select {
     text-align: left;
     
     
+    
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: var(--font-heading);
-    font-weight: 500;
+    font-weight: 100;
     margin-bottom: 1rem;
     color: rgb(255, 255, 255);
-text-align: left;
+    text-align: left;
+        line-height: 1.5;
+
 
 
 }
@@ -314,11 +315,11 @@ text-align: left;
     font-size: 15px;
     font-family: var(--font-heading);
     margin-bottom: 1.5rem;
-    max-width: 700px;
+    max-width: 550px;
     color: white;
-    font-weight: 500;
+    font-weight: lighter;
 text-align: left;
-line-height: 1.2;
+line-height: 1.5;
 
 }
 
@@ -380,7 +381,7 @@ line-height: 1.2;
     color: var(--dark-color);
     margin: 0;
     font-weight: 600;
-    font-family: var(--font-main)}
+    font-family: var(--font-heading)}
 
 .form-icon {
     width: 40px;
@@ -418,7 +419,7 @@ line-height: 1.2;
     border: 1px solid var(--light-gray);
     border-radius: var(--radius-sm);
     font-size: 1rem;
-    font-family: var(--font-main);
+    font-family: var(--font-sans);
     background-color: #f8fafc;
     transition: var(--transition);
 }
@@ -476,7 +477,7 @@ line-height: 1.2;
     color: #dc2626;
     font-size: 0.85rem;
     margin-top: 0.5rem;
-    font-family: var(--font-main);
+    font-family: var(--font-sans);
     display: none;
 }
 
