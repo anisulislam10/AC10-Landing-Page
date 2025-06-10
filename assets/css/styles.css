@@ -51,6 +51,8 @@ body {
   color: var(--dark);
   background-color: var(--light);
   overflow-x: hidden;
+  letter-spacing: -0.05em;    
+
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
@@ -230,14 +232,14 @@ button, input, textarea, select {
     background: linear-gradient(135deg, #061131 0%, #05122e 100%);
     color: white;
     max-height: 1200px;
-    padding: 150px;
+    padding: 100px;
     
     
 }
 
 .hero-bg {
     position: absolute;
-    top: 90px;
+    top: 20px;
     left: 0;
     width: 100%;
     height: 100%;
@@ -287,39 +289,44 @@ button, input, textarea, select {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size:42px;
     font-family: var(--font-heading);
     line-height: 1.1;
     margin-bottom: 1rem;
     font-weight: 400;
     text-align: left;
-    
+letter-spacing: -0.05em;    
     
     
 }
 
 .hero-subtitle {
-    font-size: 1rem;
+    font-size: 20px;
     font-family: var(--font-heading);
-    font-weight: 100;
+    font-weight: 400;
     margin-bottom: 1rem;
     color: rgb(255, 255, 255);
     text-align: left;
-        line-height: 1.5;
+    line-height: 1.5;
+    letter-spacing: -0.05em;    
+
 
 
 
 }
 
 .hero-text {
-    font-size: 15px;
+    font-size: 17.6px;
     font-family: var(--font-heading);
     margin-bottom: 1.5rem;
-    max-width: 550px;
+    max-width: 500px;
     color: white;
     font-weight: lighter;
-text-align: left;
+    text-align: left;
 line-height: 1.5;
+letter-spacing: -0.05em;    
+
+
 
 }
 
