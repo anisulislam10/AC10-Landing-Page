@@ -50,49 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Countdown Timer
    // Countdown Timer
-const countdownElement = document.getElementById('countdown');
-    if (countdownElement) {
-        // Set the end date to 7 days from now, at 23:59:59 local time
-        const endDate = new Date();
-        endDate.setDate(endDate.getDate() + 30);
-        endDate.setHours(23, 59, 59, 999);
-
-        const updateCountdown = () => {
-            const now = new Date();
-            const timeLeft = endDate - now;
-
-            if (timeLeft <= 0) {
-                countdownElement.innerHTML = '<p class="offer-expired">Offer Expired!</p>';
-                clearInterval(timerInterval);
-                return;
-            }
-
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-            const daysElement = document.getElementById('days');
-            const hoursElement = document.getElementById('hours');
-            const minutesElement = document.getElementById('minutes');
-            const secondsElement = document.getElementById('seconds');
-
-            if (daysElement && hoursElement && minutesElement && secondsElement) {
-                daysElement.textContent = days.toString().padStart(2, '0');
-                hoursElement.textContent = hours.toString().padStart(2, '0');
-                minutesElement.textContent = minutes.toString().padStart(2, '0');
-                secondsElement.textContent = seconds.toString().padStart(2, '0');
-            } else {
-                console.error('Countdown timer elements (days, hours, minutes, seconds) not found in DOM');
-                clearInterval(timerInterval);
-            }
-        };
-
-        updateCountdown();
-        const timerInterval = setInterval(updateCountdown, 1000);
-    } else {
-        console.warn('Countdown element not found in DOM. Skipping countdown initialization.');
-    }
+// 
   
 
   // Form validation and submission
