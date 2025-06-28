@@ -47,11 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   //hero section
-  
-    // Countdown Timer
-   // Countdown Timer
-// 
-  
+
 
   // Form validation and submission
    // Form Validation and Submission

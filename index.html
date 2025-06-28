@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ATG Pharma, based in Oakville, Ontario, is a leading North American manufacturer of innovative bench-top filling and packaging automation equipment for the pharmaceutical industry. Explore our advanced solutions like RoboCAP, A1 Cart Filler, and Semi-Automatic Filling Systems for precise, efficient production of capsules, vape cartridges, gummies, and more. Contact us for high-quality machinery and exceptional service.">
     <meta name="keywords" content="ATG Pharma, pharmaceutical automation, bench-top filling equipment, packaging automation, RoboCAP, vape cartridge filler, capsule filling system, A1 Cart Filler, Semi-Automatic Filling System, MonoPress, AC10 Mini Candy Depositor, pharmaceutical manufacturing, Oakville Ontario, precision dosing technology, automated packaging solutions">
@@ -11,13 +11,11 @@
     <meta name="og:description" content="Discover ATG Pharma's industry-leading bench-top filling and packaging automation equipment, including RoboCAP and A1 Cart Filler, designed for pharmaceutical precision and efficiency. Contact us in Oakville, Ontario.">
     <meta name="og:type" content="website">
     <meta name="og:url" content="https://atgpharma.com">
+    <meta name="og:image" content="https://atgpharma.com/assets/images/atg-logo.png">
     <title>AC10 Mini Candy Depositor | ATG Pharma</title>
-       <!-- Favicon links (modern approach) -->
-    <link rel="icon" href="assets/images/atg-logo.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="assets/images/atg-logo.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon-96x96-1.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/favicon-96x96-1.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-SOMEHASH==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-
 </head>
 <body>
     <header class="header">
@@ -29,13 +27,11 @@
                     </a>
                 </div>
                 <ul class="nav-links">
-                    <!-- <li><a href="#home">Home</a></li> -->
                     <li><a href="#features">Features</a></li>
                     <li><a href="#specs">Specifications</a></li>
                     <li><a href="#components">Components</a></li>
                     <li><a href="#partners">Partners</a></li>
-
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact" class="contact-btn">Contact</a></li>
                 </ul>
                 <div class="hamburger">
                     <div class="line"></div>
@@ -46,63 +42,37 @@
         </div>
     </header>
 
-  <section id="home" class="hero">
-       <div class="hero-bg">
-  <img 
-    src="/assets/images/ac-10.webp" 
-    alt="ATG Pharma Machine" 
-    fetchpriority="high" 
-    loading="eager" 
-    width="800" 
-    height="600"
-  >
-</div>
+    <section id="home" class="hero">
+        <div class="hero-bg">
             <div class="bg-overlay"></div>
         </div>
         <div class="container">
             <div class="hero-container">
                 <div class="hero-content">
-                    <!-- <div class="offer-highlight">Thank You for Being Here!</div> -->
-                    <h1 class="hero-title">AC10 Mini <br>Candy Depositor </h1>
+                    <h1 class="hero-title">AC10 Mini Candy Depositor</h1>
                     <p class="hero-subtitle"><br/><br/>Effortlessly Produce 9,000 Gummies Per Hour</p>
                     <p class="hero-text">
                         Supercharge your candy production with the AC10 Mini from ATG Pharma the perfect solution for small to mid-sized operations.  <br/> <br/>This compact, high-performance depositor delivers precise and consistent results, helping you create up to 9,000 gummies per hour with minimal waste.
-
- <br/> <br/>Streamline your workflow, maintain product quality, and scale smarter  all with one powerful machine <br/> 
-                       
+                        <br/> <br/>Streamline your workflow, maintain product quality, and scale smarter all with one powerful machine <br/>
                     </p>
-                    <!-- <div class="countdown-timer" id="countdown">
-                        <div class="timer-box"><span id="days">00</span><small>Days</small></div>
-                        <div class="timer-box"><span id="hours">00</span><small>Hours</small></div>
-                        <div class="timer-box"><span id="minutes">00</span><small>Minutes</small></div>
-                        <div class="timer-box"><span id="seconds">00</span><small>Seconds</small></div>
-                    </div> -->
                     <div class="button-container">
-
-                    <a href="#features" class="cta-button">Features</a> 
-                    <a href="#specs" class="cta-button">Specifications</a>
-  <a href="#" class="cta-button" id="galleryButton">Gallery</a>
-
-
-    <!-- Gallery Popup -->
-    <div id="galleryPopup" class="popup">
-        <div class="popup-content">
-            <span class="close-btn">&times;</span>
-        <h2 id="galleryHeading" class="image-title"></h2>
-            <div class="gallery-container">
-                <button class="nav-btn prev-btn">&lt;</button>
-                <div class="image-container">
-                    <img id="currentImage" src="" alt="Gallery Image">
-                </div>
-                <button class="nav-btn next-btn">&gt;</button>
-            </div>
-        </div>
-    </div>
-     </div>
-
-   
-
-
+                        <a href="#features" class="cta-button">Features</a> 
+                        <a href="#specs" class="cta-button">Specifications</a>
+                        <a href="#" class="cta-button" id="galleryButton">Gallery</a>
+                        <div id="galleryPopup" class="popup">
+                            <div class="popup-content">
+                                <span class="close-btn">×</span>
+                                <h2 id="galleryHeading" class="image-title"></h2>
+                                <div class="gallery-container">
+                                    <button class="nav-btn prev-btn" aria-label="Previous image">&lt;</button>
+                                    <div class="image-container">
+                                        <img id="currentImage" src="/assets/images/placeholder.jpg" alt="Gallery Image">
+                                    </div>
+                                    <button class="nav-btn next-btn" aria-label="Next image">&gt;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="hero-form compact-form">
                     <div class="form-header">
@@ -114,21 +84,21 @@
                             </svg>
                         </div>
                     </div>
-                  <form id="contactForm" method="POST">
+                    <form id="contactForm" method="POST">
                         <input type="hidden" name="_subject" value="Limited Time Offer Inquiry">
                         <input type="hidden" name="_language" value="en">
                         <input type="text" name="_gotcha" style="display:none">
                         <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Enter your full name" required autocomplete="name">
-                            <div class="error-message"></div>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required autocomplete="name" aria-describedby="name-error">
+                            <div id="name-error" class="error-message"></div>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Enter your email" required autocomplete="email">
-                            <div class="error-message"></div>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required autocomplete="email" aria-describedby="email-error">
+                            <div id="email-error" class="error-message"></div>
                         </div>
                         <div class="form-group">
-                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required autocomplete="tel">
-                            <div class="error-message"></div>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required autocomplete="tel" aria-describedby="phone-error">
+                            <div id="phone-error" class="error-message"></div>
                         </div>
                         <button type="submit" class="submit-button">
                             <span>Submit</span>
@@ -148,26 +118,25 @@
             <h2 class="section-title">Key Features</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon"><img src="/assets/images/icons/machine.png"></div>
+                    <div class="feature-icon"><img src="/assets/images/icons/machine.png" alt="Machine icon"></div>
                     <h3>Customizable Powerhouse</h3>
                     <p>Program up to 60 unique recipes using an intuitive touchscreen interface.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon"><img src="/assets/images/icons/machinery_.png"></div>
+                    <div class="feature-icon"><img src="/assets/images/icons/machinery_.png" alt="Machinery icon"></div>
                     <h3>One-Operator Convenience</h3>
                     <p>Efficiently run with just one operator, saving labour costs while boosting productivity.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon"><img src="/assets/images/icons/thermostat_.png"></div>
+                    <div class="feature-icon"><img src="/assets/images/icons/thermostat_.png" alt="Thermostat icon"></div>
                     <h3>Flexible Temperature Control</h3>
                     <p>Dual temperature settings allow for precise control, perfect for fine-tuning each batch.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon"><img src="/assets/images/icons/adjustability.png"></div>
+                    <div class="feature-icon"><img src="/assets/images/icons/adjustability.png" alt="Adjustability icon"></div>
                     <h3>Versatile Compatibility</h3>
-                    <p>Ideal for gelatin and pectin gummies as well as chocolate deposits, meeting a wide range of production needs.</p>
+                    <p>Ideal for gelatin and pectin gummies as well as chocolate deposits, meeting a wide range of production needsパ>
                 </div>
-                
             </div>
             <div class="feature-summary">
                 <p>With the AC-10, experience a new standard in gummy production, where efficiency, flexibility, and customization come together flawlessly.</p>
@@ -176,391 +145,284 @@
     </section>
 
     <section id="specs" class="specs-section">
-    <div class="container">
-        <h2 class="section-title">Gummy Depositor Specifications</h2>
-        <div class="specs-horizontal">
-            <div class="spec-row">
-                <div class="spec-name">Maximum Temperature</div>
-                <div class="spec-value show">130°C</div>
-            </div>
-            <div class="spec-row">
-                <div class="spec-name">Servo Motor</div>
-                <div class="spec-value show">400W</div>
-            </div>
-            <div class="spec-row">
-                <div class="spec-name">Power Supply</div>
-                <div class="spec-value show">110V-240V AC 50-60Hz</div>
-            </div>
-            <div class="spec-row">
-                <div class="spec-name">Number Of Nozzles</div>
-                <div class="spec-value show">10</div>
-            </div>
-            <div class="spec-row">
-                <div class="spec-name">Hopper Size</div>
-                <div class="spec-value show">12L</div>
-            </div>
-            <div class="spec-row">
-                <div class="spec-name">Shot Size</div>
-                <div class="spec-value show">1-5 grams/shot</div>
-            </div>
-            <div class="spec-row">
-                <div class="spec-name">HMI</div>
-                <div class="spec-value show">Touch Screen</div>
-            </div>
-            <div class="spec-row">
-                <div class="spec-name">Floor Size</div>
-                <div class="spec-value show">25" × 14" × 29"</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-  <section id="components" class="components-section">
-    <div class="container">
-        <h2 class="section-title">AC10 Mini Candy Depositor Components</h2>
-        <div class="components-grid">
-            <div class="component-card">
-                <div class="component-image">
-                    <img src="assets/images/c1.png" alt="Intuitive Touch Screen">
-                </div>
-                <div class="component-content">
-                    <div class="content-wrapper">
-                        <h3>Intuitive Touch Screen</h3>
-              <p>The AC-10 Gummy Depositor puts full command at your fingertips with its user-friendly touchscreen interface. Effortlessly fine-tune settings for flawless production, ensuring consistency and efficiency in every batch.</p>
-
-<ul style="list-style-type: none; padding-left: 0; margin-top: 0;">
-    <li>✔ Precision Adjustments </li>
-    <li>✔ Streamlined Workflow </li>
-    <li>✔ Error-Free Operation </li>
-</ul>
-
-                    </div>
-                </div>
-            </div>
-            <div class="component-card reverse">
-                <div class="component-image">
-                    <img src="assets/images/c2.png" alt="Multi-Nozzle Depositor">
-                </div>
-                <div class="component-content">
-                    <div class="content-wrapper">
-                        <h3>Multi-Nozzle Depositor</h3>
-                       <p>Our advanced multi-nozzle depositor lets you fill up to 10 molds in a single shot, slashing production time and maximizing efficiency. By optimizing key parameters, you can deposit directly into each mold with pinpoint accuracy—eliminating mess, reducing waste, and ensuring perfectly shaped gummies every time.</p>
-
-<ul style="list-style-type: none; padding-left: 0;">
-    <li>✔ Faster output </li>
-    <li>✔ Consistent results</li>
-    <li>✔ Less cleanup </li>
-</ul>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-  <!-- <section id="gallery" class="section gallery">
         <div class="container">
-            <h2>Gallery</h2>
-            <p class="gallery-subtitle">Explore the precision and efficiency of the RoboCAP Filling System through our gallery.</p>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="/assets/images/gallery/1.png" alt="RoboCAP Filling Machine" data-full="/assets/images/gallery/1.png" >
-                    <div class="gallery-overlay">
-                        <span>View </span>
-                    </div>
+            <h2 class="section-title">Gummy Depositor Specifications</h2>
+            <div class="specs-horizontal">
+                <div class="spec-row">
+                    <div class="spec-name">Maximum Temperature</div>
+                    <div class="spec-value show">130°C</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="/assets/images/gallery/2.png" alt="Filled Vape Cartridges" data-full="/assets/images/gallery/2.png">
-                    <div class="gallery-overlay">
-                        <span>View </span>
-                    </div>
+                <div class="spec-row">
+                    <div class="spec-name">Servo Motor</div>
+                    <div class="spec-value show">400W</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="assets/images/gallery/3.png" alt="Filled Bottles" data-full="assets/images/gallery/3.png">
-                    <div class="gallery-overlay">
-                        <span>View </span>
-                    </div>
+                <div class="spec-row">
+                    <div class="spec-name">Power Supply</div>
+                    <div class="spec-value show">110V-240V AC 50-60Hz</div>
                 </div>
+                <div class="spec-row">
+                    <div class="spec-name">Number Of Nozzles</div>
+                    <div class="spec-value show">10</div>
+                </div>
+                <div class="spec-row">
+                    <div class="spec-name">Hopper Size</div>
+                    <div class="spec-value show">12L</div>
+                </div>
+                <div class="spec-row">
+                    <div class="spec-name">Shot Size</div>
+                    <div class="spec-value show">1-5 grams/shot</div>
+                </div>
+                <div class="spec-row">
+                    <div class="spec-name">HMI</div>
+                    <div class="spec-value show">Touch Screen</div>
+                </div>
+                <div class="spec-row">
+                    <div class="spec-name">Floor Size</div>
+                    <div class="spec-value show">25" × 14" × 29"</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-                <div class="gallery-item">
-                    <img src="assets/images/Balms-removebg-preview.png" alt="Filled Bottles" data-full="assets/images/gallery/3.png">
-                    <div class="gallery-overlay">
-                        <span>View </span>
+    <section id="components" class="components-section">
+        <div class="container">
+            <h2 class="section-title">AC10 Mini Candy Depositor Components</h2>
+            <div class="components-grid">
+                <div class="component-card">
+                    <div class="component-image">
+                        <img src="assets/images/c1.png" alt="Intuitive Touch Screen" loading="lazy">
+                    </div>
+                    <div class="component-content">
+                        <div class="content-wrapper">
+                            <h3>Intuitive Touch Screen</h3>
+                            <p>The AC-10 Gummy Depositor puts full command at your fingertips with its user-friendly touchscreen interface. Effortlessly fine-tune settings for flawless production, ensuring consistency and efficiency in every batch.</p>
+                            <ul style="list-style-type: none; padding-left: 0; margin-top: 0;">
+                                <li>✔ Precision Adjustments</li>
+                                <li>✔ Streamlined Workflow</li>
+                                <li>✔ Error-Free Operation</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                
+                <div class="component-card reverse">
+                    <div class="component-image">
+                        <img src="assets/images/c2.png" alt="Multi-Nozzle Depositor" loading="lazy">
+                    </div>
+                    <div class="component-content">
+                        <div class="content-wrapper">
+                            <h3>Multi-Nozzle Depositor</h3>
+                            <p>Our advanced multi-nozzle depositor lets you fill up to 10 molds in a single shot, slashing production time and maximizing efficiency. By optimizing key parameters, you can deposit directly into each mold with pinpoint accuracy—eliminating mess, reducing waste, and ensuring perfectly shaped gummies every time.</p>
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li>✔ Faster output</li>
+                                <li>✔ Consistent results</li>
+                                <li>✔ Less cleanup</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="lightbox" id="lightbox">
-                <span class="lightbox-close">&times;</span>
-                <img class="lightbox-image" src="" alt="Lightbox Image">
+        </div>
+    </section>
+
+    <section class="partners-section" id="partners">
+        <div class="container">
+            <h2 class="section-title">Our Valued Partners</h2>
+            <div class="partners-row top-row">
+                <div class="partners-track ltr-track">
+                    <div class="partner-logo">
+                        <img src="/assets/images/partners/alpharoot-logo-dark-sm.png" alt="Alpharoot logo" loading="lazy">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="/assets/images/partners/atg-partner-3win.png" alt="3Win logo" loading="lazy">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="/assets/images/partners/atg-partner-ascera.png" alt="Ascera logo" loading="lazy">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="/assets/images/partners/atg-partner-avd.png" alt="AVD logo" loading="lazy">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="/assets/images/partners/atg-partner-boldcarts.png" alt="Bold Carts logo" loading="lazy">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="/assets/images/partners/atg-partner-boldmaker.png" alt="Bold Maker logo" loading="lazy">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="/assets/images/partners/atg-partner-candypro-1.png" alt="CandyPro logo" loading="lazy">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="/assets/images/partners/atg-partner-ccell.png" alt="CCell logo" loading="lazy">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="/assets/images/partners/atg-partner-endose.png" alt="Endose logo" loading="lazy">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="/assets/images/partners/atg-partner-greentank.png" alt="Greentank logo" loading="lazy">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="/assets/images/partners/atg-partner-jupiter.png" alt="Jupiter logo" loading="lazy">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="/assets/images/partners/atg-partner-melttomake.png" alt="Melt to Make logo" loading="lazy">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="/assets/images/partners/atg-partner-o2vape.png" alt="O2Vape logo" loading="lazy">
+                    </div>
+                </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
-<section class="partners-section" id="partners">
-  <div class="container">
-    <h2 class="section-title">Our Valued Partners</h2>
-    
-    <div class="partners-row top-row">
-      <div class="partners-track ltr-track">
-        <!-- First set of logos (will be duplicated in JS for infinite loop) -->
-        <div class="partner-logo">
-          <img src="/assets/images/partners/alpharoot-logo-dark-sm.png" alt="Sweet Candy Co." loading="lazy">
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">See Why Our Customers Trust ATG</h2>
+            <div class="testimonials-slider" id="testimonial-slider">
+                <div id="testimonial-1" class="testimonial active">
+                    <div class="testimonial-content">
+                        <p>"The ATG RoboCAP System revolutionized our production line with its precision filling, boosting efficiency by 40% while cutting waste. Its intuitive interface allows quick setup, and the minimal maintenance design ensures maximum uptime. We've achieved consistent, pharmaceutical-grade results while doubling our output capacity. The ROI was evident within just three months of implementation."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Logan Marynissen</h4>
+                        <p>R&D Director, Somai Pharma</p>
+                    </div>
+                </div>
+                <div id="testimonial-2" class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The RL-300 RoboCAP's modular design transformed our cannabis production, enabling 300% capacity growth without expanding our facility footprint. Its unparalleled flexibility handles everything from 0.5mL to 30mL fills with 99.9% accuracy. The automated capping integration eliminated our bottleneck, making this the most versatile filling solution we've encountered in 15 years of cannabis manufacturing."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Dashiel Kulander</h4>
+                        <p>CEO, Boojum</p>
+                    </div>
+                </div>
+                <div id="testimonial-3" class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Implementing the RoboCAP system was like adding three skilled technicians to our team. The fully automated filling process reduced manual labor by 75% while increasing output consistency. Changeovers between products take minutes, not hours. Most impressively, we've maintained 100% fill accuracy across 500,000+ units with zero product loss due to filling errors."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>David Turk</h4>
+                        <p>CEO, Active Humans</p>
+                    </div>
+                </div>
+                <div id="testimonial-4" class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"After struggling with vape filling inconsistencies, ATG's solution delivered 99.8% fill accuracy at 2,000 units/hour with single-operator efficiency. The integrated capping system eliminated our contamination risks while reducing labor costs by 60%. Their engineering team's custom calibration for our viscous oils solved problems we'd battled for years. Now we run three shifts with complete confidence in every cartridge."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Torrin Panico</h4>
+                        <p>Associate Director of Product Development, Happy Valley</p>
+                    </div>
+                </div>
+                <div id="testimonial-5" class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"ATG's exceptional support helped us launch four new cart products within months. Their automated filler's precision enabled formulations we previously couldn't commercialize. The system's scalability supported our 400% growth without additional equipment. Their team's responsiveness and deep industry knowledge made the transition seamless, proving invaluable as we expanded into new markets."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Gabriel Londono</h4>
+                        <p>CEO, Harbor House Collective</p>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button id="testimonial-prev" class="slider-prev" aria-label="Previous testimonial">‹</button>
+                    <div class="slider-dots" id="testimonial-dots"></div>
+                    <button id="testimonial-next" class="slider-next" aria-label="Next testimonial">›</button>
+                </div>
+            </div>
         </div>
-        <div class="partner-logo">
-          <img src="/assets/images/partners/atg-partner-3win.png" alt="Gummy World" loading="lazy">
-        </div>
-        <div class="partner-logo">
-          <img src="/assets/images/partners/atg-partner-ascera.png" alt="Choco Delight" loading="lazy">
-        </div>
-        <div class="partner-logo">
-          <img src="/assets/images/partners/atg-partner-avd.png" alt="Jelly Bean Factory" loading="lazy">
-        </div>
-        <div class="partner-logo">
-          <img src="/assets/images/partners/atg-partner-boldcarts.png" alt="Sugar Rush" loading="lazy">
-        </div>
-        <div class="partner-logo">
-          <img src="/assets/images/partners/atg-partner-boldmaker.png" alt="Sugar Rush" loading="lazy">
-        </div>
-        <div class="partner-logo">
-          <img src="/assets/images/partners/atg-partner-candypro-1.png" alt="Sugar Rush" loading="lazy">
-        </div>
-        <div class="partner-logo">
-          <img src="/assets/images/partners/atg-partner-ccell.png" alt="Sugar Rush" loading="lazy">
-        </div>
-        <div class="partner-logo">
-          <img src="/assets/images/partners/atg-partner-endose.png" alt="Sugar Rush" loading="lazy">
-        </div>
-        <div class="partner-logo">
-          <img src="/assets/images/partners/atg-partner-greentank.png" alt="Sugar Rush" loading="lazy">
-        </div>
-        <div class="partner-logo">
-          <img src="/assets/images/partners/atg-partner-jupiter.png" alt="Sugar Rush" loading="lazy">
-        </div>
-        <div class="partner-logo">
-          <img src="/assets/images/partners/atg-partner-melttomake.png" alt="Sugar Rush" loading="lazy">
-        </div>
-        <div class="partner-logo">
-          <img src="/assets/images/partners/atg-partner-o2vape.png" alt="Sugar Rush" loading="lazy">
-        </div>
-        
-    </div>
-
-    <div class="partners-row bottom-row">
-      <div class="partners-track rtl-track"> <!-- Right to Left -->
-        <!-- Different set of partners moving opposite direction -->
- <div class="partner-logo">
-      
-       
-          <img src="/assets/images/partners/atg-partner-candypro-1.png" alt="Sugar Rush" loading="lazy">
-        </div>
-        <div class="partner-logo">
-          <img src="/assets/images/partners/atg-partner-ccell.png" alt="Sugar Rush" loading="lazy">
-        </div>
-        <div class="partner-logo">
-          <img src="/assets/images/partners/atg-partner-endose.png" alt="Sugar Rush" loading="lazy">
-        </div>
-        <div class="partner-logo">
-          <img src="/assets/images/partners/atg-partner-greentank.png" alt="Sugar Rush" loading="lazy">
-        </div>
-        <div class="partner-logo">
-          <img src="/assets/images/partners/atg-partner-jupiter.png" alt="Sugar Rush" loading="lazy">
-        </div>
-        <div class="partner-logo">
-          <img src="/assets/images/partners/atg-partner-melttomake.png" alt="Sugar Rush" loading="lazy">
-        </div>
-        <div class="partner-logo">
-          <img src="/assets/images/partners/atg-partner-o2vape.png" alt="Sugar Rush" loading="lazy">
-         </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-<section class="testimonials-section">
-  <div class="container">
-    <h2 class="section-title">See Why Our Customers Trust ATG</h2>
-    
-    <div class="testimonials-slider">
-      <!-- Testimonial 1 -->
-      <div class="testimonial active">
-        <div class="testimonial-content">
-          <p>"The ATG RoboCAP System has been a game-changer for our production. Its precise filling capabilities have significantly increased our efficiency and reduced waste. The system is user-friendly, with a straightforward setup and minimal maintenance required. We've experienced faster production times and consistently high-quality results."</p>
-        </div>
-        <div class="testimonial-author">
-          <h4>Logan Marynissen</h4>
-          <p>R&D Director, Somai Pharma</p>
-        </div>
-      </div>
-      
-      <!-- Testimonial 2 -->
-      <div class="testimonial">
-        <div class="testimonial-content">
-          <p>"The modular and compact nature of the RL-300 RoboCAP has allowed us to scale our production while maintaining a minimal footprint. Pound for pound it is the most capable, flexible and scalable application for filling we've come across in the cannabis industry."</p>
-        </div>
-        <div class="testimonial-author">
-          <h4>Dashiel Kulander</h4>
-          <p>CEO, Boojum</p>
-        </div>
-      </div>
-      
-      <!-- Testimonial 3 -->
-      <div class="testimonial">
-        <div class="testimonial-content">
-          <p>"We are significantly more efficient on the production line. The RoboCAP system feels like we've added an extra body in the lab - it's virtually hands free and makes filling our bottles a breeze."</p>
-        </div>
-        <div class="testimonial-author">
-          <h4>David Turk</h4>
-          <p>CEO, Active Humans</p>
-        </div>
-      </div>
-
-<!-- Testimonial 4 -->
-      <div class="testimonial">
-        <div class="testimonial-content">
-      <p>We were struggling with vape filling accuracy, consistency and fill-to-cap time. ATG is at the top of their game in volume metric filling equipment. We switched our vape filling robot and purchased that capper. Now we accurately fill and cap 2000 vape cartridges/hour with a single operator, and full confidence in accuracy.</p>
-       </div>
-        <div class="testimonial-author">
-          <h4>Torrin Panico</h4>
-          <p>Associate Director of Product Development, Happy Valley</p>
-        </div>
-      </div>
-       <!-- -- Testimonial 5 -->
-      <div class="testimonial">
-        <div class="testimonial-content">
-
-      <p>Working with ATG has been a breeze from the start. Their team is not only responsive but also goes above and beyond in providing excellent support and onboarding. After introducing the automated cartridge filler, we were able to add four additional cart products to our lineup. This level of flexibility and scalability has had a profound impact on our business, opening new avenues for growth and innovation.</p>
-    </div>
-       <div class="testimonial-author">
-          <h4>Gabriel Londono</h4>
-          <p>CEO, Harbor House Collective</p>
-      </div>
-      </div>
-
-
-      <div class="slider-controls">
-        <button class="slider-prev">‹</button>
-        <div class="slider-dots"></div>
-        <button class="slider-next">›</button>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <section class="video-section">
         <div class="container">
             <h2 class="section-title">The AC10 Live in Action</h2>
             <div class="video-container">
                 <div class="video-wrapper">
-                    <!-- Replace with actual video embed code -->
-<iframe width="1220" height="495" src="https://www.youtube.com/embed/pBPZTe-NWJM" title="ATG Pharma: The AC10 Mini Candy Depositor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
+                    <iframe width="1220" height="495" src="https://www.youtube.com/embed/pBPZTe-NWJM" title="ATG Pharma: The AC10 Mini Candy Depositor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
             </div>
         </div>   
     </section>
 
- <section id="contact" class="contact-section">
-    <div class="container">
-        <div class="contact-header">
-            <h2 class="section-titlee">Let's Connect</h2>
-            <p class="section-subtitle">We're here to help you find the perfect solution for your production needs</p>
-            <!-- <a href="#home" class="discount-btn">Get 20% Off Your First Order</a> -->
-        </div>
-        
-        <div class="contact-content">
-            <div class="contact-info">
-                <div class="contact-cards">
-                    <a href="mailto:customersuccess@atgpharma.com" class="contact-card">
-                        <div class="card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </div>
-                        <h4>Email Us</h4>
-                        <p>customersuccess@atgpharma.com</p>
-                        <span class="contact-cta">Send us a message</span>
-                    </a>
-                    
-                    <a href="tel:18663095029" class="contact-card">
-                        <div class="card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                        </div>
-                        <h4>Call Us</h4>
-                        <p>1 (866) 309-5029</p>
-                        <span class="contact-cta">Tap to call now</span>
-                    </a>
-                    
-                    <a href="https://maps.google.com/?q=474+Iroquois+Shore+Rd,+Unit+2,+Oakville,+Ontario" target="_blank" class="contact-card">
-                        <div class="card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                        </div>
-                        <h4>Visit Us</h4>
-                        <p>474 Iroquois Shore Rd, Unit 2, Oakville, Ontario</p>
-                        <span class="contact-cta">Get directions</span>
-                    </a>
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-header">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">We're here to help you find the perfect solution for your production needs</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-cards">
+                        <a href="mailto:customersuccess@atgpharma.com" class="contact-card">
+                            <div class="card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <h4>Email Us</h4>
+                            <p>customersuccess@atgpharma.com</p>
+                            <span class="contact-cta">Send us a message</span>
+                        </a>
+                        <a href="tel:18663095029" class="contact-card">
+                            <div class="card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <h4>Call Us</h4>
+                            <p>1 (866) 309-5029</p>
+                            <span class="contact-cta">Tap to call now</span>
+                        </a>
+                        <a href="https://maps.google.com/?q=474+Iroquois+Shore+Rd,+Unit+2,+Oakville,+Ontario" target="_blank" class="contact-card">
+                            <div class="card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <h4>Visit Us</h4>
+                            <p>474 Iroquois Shore Rd, Unit 2, Oakville, Ontario</p>
+                            <span class="contact-cta">Get directions</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>ATG Pharma</h3>
-                    <p>A premier North American manufacturer of high-performance bench-top filling and packaging automation solutions, expertly engineered to accommodate a diverse range of products including vape cartridges, capsules, bottles, balms, and beyond. </p>
+                    <p>A premier North American manufacturer of high-performance bench-top filling and packaging automation solutions, expertly engineered to accommodate a diverse range of products including vape cartridges, capsules, bottles, balms, and beyond.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="https://atgpharma.com/cartridges/">Automatic</a></li>
-                    <li><a href="https://atgpharma.com/atg-products/act-100-capper/">Semi Automatic Packaging</a></li>
-                    <li><a href="https://atgpharma.com/support/">Support</a></li>
-                    <li><a href="https://atgpharma.com/blog/">Blog</a></li>
-                    <li><a href="https://atgpharma.com/faq/">FAQs</a></li>
-                    <li><a href="https://atgpharma.com/meet-our-partners/">Meet Our Partners</a></li>
-
+                        <li><a href="https://atgpharma.com/atg-products/act-100-capper/">Semi Automatic Packaging</a></li>
+                        <li><a href="https://atgpharma.com/support/">Support</a></li>
+                        <li><a href="https://atgpharma.com/blog/">Blog</a></li>
+                        <li><a href="https://atgpharma.com/faq/">FAQs</a></li>
+                        <li><a href="https://atgpharma.com/meet-our-partners/">Meet Our Partners</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-    <h3>Contact</h3>
-    <p><a href="mailto:customersuccess@atgpharma.com">customersuccess@atgpharma.com</a></p>
-    <p><a href="tel:18663095029">1 (866) 309-5029</a></p>
-    <p>474 Iroquois Shore Rd, Unit 2, Oakville, Ontario</p>
-    
-    <div class="social-icons">
-        <a href="https://www.instagram.com/atgpharma/" target="_blank" class="social-icon instagram">Instagram</a>
-        <a href="https://www.linkedin.com/company/atgpharma" target="_blank" class="social-icon linkedin">LinkedIn</a>
-        <a href="https://www.youtube.com/channel/UCh8H7mM8shlahDe4sIibIAQ" target="_blank" class="social-icon youtube">YouTube</a>
-    </div>
-</div>
-</div>
-
-            <div class="footer-bottom">         
-                                                 
-
-                <p>&copy; 2025 ATG Pharma. All rights reserved.</p>
-<pre>
-    <a href="https://atgpharma.com/privacy-policy/"> Privacy Policy</a></pre>
-
-
+                    <h3>Contact</h3>
+                    <p><a href="mailto:customersuccess@atgpharma.com">customersuccess@atgpharma.com</a></p>
+                    <p><a href="tel:18663095029">1 (866) 309-5029</a></p>
+                    <p>474 Iroquois Shore Rd, Unit 2, Oakville, Ontario</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/atgpharma/" target="_blank" class="social-icon instagram">Instagram</a>
+                        <a href="https://www.linkedin.com/company/atgpharma" target="_blank" class="social-icon linkedin">LinkedIn</a>
+                        <a href="https://www.youtube.com/channel/UCh8H7mM8shlahDe4sIibIAQ" target="_blank" class="social-icon youtube">YouTube</a>
+                    </div>
+                </div>
             </div>
-            
+            <div class="footer-bottom">         
+                <p>© 2025 ATG Pharma. All rights reserved.</p>
+                <p><a href="https://atgpharma.com/privacy-policy/">Privacy Policy</a></p>
+            </div>
         </div>
     </footer>
 
