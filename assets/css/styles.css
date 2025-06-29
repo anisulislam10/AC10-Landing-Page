@@ -198,6 +198,9 @@ button, input, textarea, select {
   width: 100%;
 }
 
+.nav-ho:hover{
+  color: #0056b3;
+}
 .hamburger {
   display: none;
   cursor: pointer;
